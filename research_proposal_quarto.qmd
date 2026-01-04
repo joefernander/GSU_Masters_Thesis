@@ -411,7 +411,7 @@ This model evaluates the effect of each intervention group relative to the contr
 
 Protecting our students ("human subjects") is of utmost priority to the research team. The research team believes this research project will qualify for a limited IRB review to classify the study in an exempt category in compliance with 45 CFR 46.104(d)(1):
 
-> "Research involving normal educational practices that are not likely to adversely impact students' opportunity to learn required educational content or the assessment of educators who provide interaction such as:
+"Research involving normal educational practices that are not likely to adversely impact students' opportunity to learn required educational content or the assessment of educators who provide interaction such as:
 
 1.  Most research on regular and special education instructional strategies; or
 
@@ -431,7 +431,7 @@ While the research team believes this study will qualify for exempt status, it i
 
     c.  Informing the course advisor over the phone that they no longer wish to be called.
 
-> Once students choose to "opt-out" of the nudges via phone, email, or text, their data will be excluded from the overall research study.
+Once students choose to "opt-out" of the nudges via phone, email, or text, their data will be excluded from the overall research study.
 
 # Budget and Staffing
 
