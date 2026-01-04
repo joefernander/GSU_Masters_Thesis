@@ -16,6 +16,7 @@ format:
     toc-location: left
     number-sections: FALSE
     theme: default
+license: "CC BY-NC-ND"
 execute:
   echo: false
   warning: false
@@ -29,7 +30,11 @@ library(gt)
 table_font_size <- 14
 ```
 
+::: callout-note
+## References
 
+This document is in the process of being converted from a Word document to a Quarto document. References may not be linked appropriately.
+:::
 
 # Introduction
 
@@ -81,7 +86,7 @@ It's important to note that self-regulated learning skills are not a fixed trait
 
 ## Proactive Advising
 
-Proactive advising, formerly called *intrusive* *advising,* emerged as early as the mid-1970s as a methodology for providing information and interventions to students before they request or realize they need it @drake_proactive_2013. @earl_intrusive_1988 [p. 28] defined a proactive academic advising model as "a deliberately structured student intervention at the first indication of academic difficulty to motivate a student to seek help. By this definition, intrusive advising utilizes the systematic skills of prescriptive advising while helping to solve the major problem of developmental advising, which is a *student's reluctance to self-refer*." Further, Glennen (1975) suggests proactive advising is a "disposition to thrust oneself into the affairs of others or be unduly curious about another's concern" [as cited in @drake_proactive_2013, p. 139]. The very nature and history of proactive advising is that a concerned individual reaches out to students who may be at risk or need important information when that student may not be aware of their needs or is reluctant to self-report.
+Proactive advising, formerly called *intrusive* *advising,* emerged as early as the mid-1970s as a methodology for providing information and interventions to students before they request or realize they need it @drake_proactive_2013. @earl_intrusive_1988 \[p. 28\] defined a proactive academic advising model as "a deliberately structured student intervention at the first indication of academic difficulty to motivate a student to seek help. By this definition, intrusive advising utilizes the systematic skills of prescriptive advising while helping to solve the major problem of developmental advising, which is a *student's reluctance to self-refer*." Further, Glennen (1975) suggests proactive advising is a "disposition to thrust oneself into the affairs of others or be unduly curious about another's concern" [as cited in @drake_proactive_2013, p. 139]. The very nature and history of proactive advising is that a concerned individual reaches out to students who may be at risk or need important information when that student may not be aware of their needs or is reluctant to self-report.
 
 This approach to academic advising connects to students who may lack self-regulation, given their lack of help-seeking behaviors. In this approach, appropriately concerned individuals at the institution do not wait for students to come forward with their academic difficulties; rather, those students are approached head-on. It's important to note that proactive advising does not equate to hand-holding or parenting but rather is designed to connect to struggling students to help them build their self-regulation skills in help-seeking, time management, and study strategies and to get connected to appropriate campus resources where they can continue to build these skills @drake_proactive_2013. Proactive advising has traditionally been applied in the context of institutional academic advising. In this model, the learner is connected to their academic advisor for multiple semesters, allowing them to build trusting and consistent relationships with a concerned member of the university success team. Advisors in this context assist students with concerns related to their academics and personal lives [@drake_academic_2013; @drake_proactive_2013].
 
