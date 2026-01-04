@@ -1,7 +1,11 @@
 ---
 title: "Do Course-Specific Nudges & Advisors Enhance Online Course Engagement and Student Success?: A Research Proposal"
-subtitle: "A Research Proposal Submitted in Partial Fulfillment of the Requirements for the Master of Science in Educational Research Degree."
-author: "Joe Fernander"
+subtitle: "A Research Proposal Submitted in Partial Fulfillment of the Requirements for the Master of Science in Educational Research Degree"
+author: 
+  - name: "Joseph D. Fernander"
+    affiliations:
+      - name: Georgia State University
+        department: Education Policy Studies
 date: "December, 2024"
 bibliography: references.bib
 format: 
