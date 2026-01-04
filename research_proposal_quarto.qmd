@@ -1,0 +1,496 @@
+---
+title: "Do Course-Specific Nudges & Advisors Enhance Online Course Engagement and Student Success?: A Research Proposal"
+subtitle: "A Research Proposal Submitted in Partial Fulfillment of the Requirements for the Master of Science in Educational Research Degree."
+author: "Joe Fernander"
+date: "December, 2024"
+bibliography: references.bib
+format: 
+  html:
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: FALSE
+    theme: default
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+
+table_font_size <- 14
+```
+
+
+
+# Introduction
+
+Online learning, or learning facilitated or mediated through online technologies, continues to rise in the United States, and as of Fall 2021, 61% (9.4 million) students were enrolled in at least one course facilitated through online learning (Digest of Education Statistics 2023, 2023). Online learning has the potential to address many social and economic issues, including access to higher education for populations geographically distant from colleges and universities, providing flexibility for learners with time-constraining obligations, and, in some cases, a more affordable way to attain a degree [@meyer_student_2014].
+
+Much like a traditional college classroom, course engagement is essential for achieving the course learning outcomes and completion. Online learners may struggle with engaging in coursework since they are physically separated from the instructor and classmates, but this is often mediated when students exhibit high levels of self-regulation and when instructors are prepared to engage with new pedagogical methods [@greenhow_foundations_2022, @martin_online_2022, @meyer_student_2014]. Educational psychology researchers [-@christenson_handbook_2013] Christenson et al. (2013) posit that learner engagement is "highly influenced" by the learning environment and *support systems in place* [@martin_online_2022].
+
+Support for online learners may differ from support systems designed for traditional classroom learners. Given the physical separation of the learner from their instructor and peers and often the geographic separation from a college campus, some traditional support services, such as counseling, tutoring, peer support, and academic advising, must adapt to offer services virtually. By the very nature of the online learning environment, online learners are required to be more independent and successful, and they often exhibit measurable differences in self-directed and self-regulated learning (Broadbent & Poon, 2015). Self-regulated learning "refers to the process whereby learners systematically direct their thoughts, feelings, and actions toward the attainment of their goals" [@yukselturk_predictors_2007, p. 73]. Self-regulated learning combines three significant constructs: students' metacognitive strategies, their management and control of academic tasks, and cognitive strategies that aid in understanding course material @yukselturk_predictors_2007. Long-standing research supports the relationship between self-regulation and student success in traditional and online learning (Barnard et al., 2009; Broadbent & Poon, 2015; Greene et al., 2010; Landrum, 2020).
+
+Learning online can impose additional challenges and may require higher demands of cognitive load on students since those learners are not only required to learn the course material but also have to "learn how to learn online" (Martin & Borup, 2022, p. 164). Learning to navigate college and build the skills necessary to succeed in college and beyond is not new to higher learning. In some aspects, all academic community members play a role in student development (Barclay, 2017). Academic instructors and advisors are of particular interest, both of whom contribute to college students' intellectual, social, and developmental well-being. Academic advisors are uniquely qualified professionals skilled in guiding students through their chosen college curriculum, providing advice for support services, advising students about course and institutional policies, and ensuring students receive the guidance and support they need to succeed @drake_academic_2013.
+
+With proper guidance and training, academic advisors are uniquely positioned to help online learners "learn how to learn online" by helping those students develop self-regulated skills and strategies. Further, given the vast amounts of data stored in learning management systems and new technological advances, it is possible for academic advisors focused on online learners to extend their reach far and wide. This is the primary concern of this research proposal: the creation of a new kind of academic advisor, a `course advisor` with the responsibility of effectively using course data and the power of automation to reach potentially at-risk students, provide meaningful nudges, and guide them into best practices for online student success.
+
+Significant advances in course learning analytics need to be made to achieve this. The field of learning analytics has been growing since the early 2000s when online learning began to emerge in the United States. Learning analytics is the "measurement, collection, analysis, and reporting of data about learners and their contexts, for understanding and optimizing learning and the environments in which it occurs" [@gasevic_lets_2015; Gray & Berner, 2022]. Learning analytics borrows many techniques from learning sciences, educational data mining, data visualization, and psychology. Given the vast amounts of data collected by learning management systems, online learning has been the primary beneficiary of the discipline of learning analytics.
+
+This research proposal will aid in the creation of a new 'course advisor' program that aims to increase student engagement and overall course success through proactive and timely notifications, collaboration with course faculty, high-touch outreach for students missing course requirements, and the development of self-regulated learning strategies and habits. This program will lean heavily on data extracted from the learning management system for operations and data analysis.
+
+# Review of Literature
+
+Course advisors' design and implementation are supported by a diverse range of theories and frameworks that collectively aim to enhance student engagement and academic success. These include concepts in online learning engagement, which explore how students interact with digital content, their peers, and instructors in their online classrooms. Self-regulated learning theories further contribute by emphasizing the importance of students' ability to plan, monitor, and reflect on their own learning processes. In this context, proactive advising focuses on the role of the course advisors in anticipating students' needs by providing timely notifications (nudges) to increase engagement before issues arise. Learning analytics and educational data mining provide the project's backbone by providing structured data from the learning management system needed to trigger notifications (nudges) and provide course advisors with a view of student progress through interactive dashboards. Finally, nudges offer strategies for subtly guiding students toward positive decisions and habits without imposing restrictions on their choices @guo_examining_2024.
+
+## Online Learner Engagement
+
+Understanding engagement in the online learning environment is critical to reporting on and improving learning outcomes. Critics of online learning cite low learner engagement and high attrition rates that may contribute to overall attrition from higher learning @martin_online_2022. However, it's important to note that high attrition in online learning may be more of a concern of online learning course design, which is vastly different from the traditional learning environment @meyer_student_2014. Keeping students engaged in online courses will require different strategies and interaction methods than in an on-campus course since students are often separated by time and physical location @meyer_student_2014.
+
+It's important to note that online learning means many things to different people. @greenhow_foundations_2022 provides a framework for understanding online learning by classifying "online-only" classes that meet virtually, either asynchronously, synchronously, or bichronous (both asynchronous and synchronous). Blended learning occurs when students engage in person and either asynchronously or synchronously online. Engagement in student learning is defined as the "student's psychological investment in an effort directed toward learning, understanding, mastering the knowledge, skills, or crafts that academic work is intended to promote." [@astin_student_1999]. @martin_online_2022 [p. 164] further refine Astin's definition of engagement for the online learning environment:
+
+> "*Online learner engagement* is the productive **cognitive**, **affective**, and **behavioral** energy that a learner exerts interacting with others and learning materials and/or through learning activities and experience in online learning environments."
+
+Each dimension of engagement in online learning is further defined:
+
+-   **Cognitive engagement:** Prior definitions of cognitive engagement included the notion that learners must go beyond the minimum requirements of a learning activity for this type of engagement to occur. @martin_online_2022 propose a new definition that includes all of the mental energy students exert towards their course learning activities as "the mental energy exerted toward productive involvement with course learning activities" (p. 164), showing that this definition focused both on the learner (mental energy) and the interaction with course materials.
+
+-   **Affective engagement:** Affective engagement is defined as "engagement as the student's emotional response to learning activities or the emotional energy students associate with learning activities" (p. 165) since this definition focuses both on the individual through their emotions and the online environment (tools for social interaction).
+
+-   **Behavioral engagement:** Behavioral engagement is defined as "the physical behaviors and energy that students demonstrate when completing learning activities" (p. 165) since this definition focuses on the individual and the course materials from which the behavior manifests.
+
+Each of these aspects manifests in online learning through student interaction with the course materials, student interaction with other students, and student interaction with their course materials. Clearly, student engagement in online learning is multidimensional and should be measured and acted upon with that premise in mind.
+
+## Self-Regulated Learning
+
+Online learning environments rely heavily on learner's abilities to autonomously and actively engage with course materials, their instructor, and their peers. While self-directed or self-regulated learning is essential for all learners, online learning demands greater independence, making self-regulated learning especially crucial for online students. @zimmerman_investigating_2008 [p. 166] defines self-regulated learning (SRL) as "the self-directive processes and self-beliefs that enable learners to transform their mental abilities, such as verbal aptitude, into an academic performance skill, such as writing. SRL is viewed as *proactive* processes that students use to acquire academic skill, such as setting goals, selecting and deploying strategies, and self-monitoring one's effectiveness, rather than as a reactive event that happens to students due to impersonal forces."
+
+Self-regulated learners typically possess skills and positive attitudes toward goal setting, planning, time management, self-monitoring, adaptability, self-reflection, and metacognition (thinking about and evaluating one's thinking processes and learning strategies). Self-regulated learners are self-aware in understanding when their study strategies are ineffective and can adapt and change to improve their outcomes (Broadbent & Poon, 2015; Greene et al., 2010; Landrum, 2020; Zimmerman, 2008). In their meta-analysis on self-regulated learning in online learning environments, Broadbent & Poon (2015) found that four specific learning strategies were significantly associated with academic achievement. Metacognition, time management, effort regulation, and critical thinking were significantly (but weakly) related to academic achievement.
+
+Similarly, in their meta-analysis, @yang_systematic_2023 found that help-seeking behaviors can influence learners' learning outcomes. They noted that help-seeking occurs when "learners recognize a gap in their comprehension, and they seek assistance to bridge the existing gap" (p. 108). Seeking help is looking towards credible sources (more knowledgeable people or places) where they believe guidance is available. They mention that "help-seeking should be viewed as an effective method for dealing with difficulties instead of stigmatizing and self-threatening behavior" (p. 108).
+
+It's important to note that self-regulated learning skills are not a fixed trait but can be influenced and improved through interventions to teach learners how to use cognitive and metacognitive strategies that impact their learning effectively (Broadbent & Poon, 2015). Interventions such as instructional scaffolding, academic coaching, and interventions tailored explicitly to increasing students' self-regulation skills have all shown that increasing these skills may improve educational outcomes [@daniel_enhancing_2024; @howlett_investigating_2021; @howlett_academic_2023; Paunesku et al., 2015]. The results from @howlett_investigating_2021 are particularly interesting to this study, showing that using academic coaches significantly increased students' metacognitive skills (knowledge about cognition and regulation of cognition) from pre- to post-test.
+
+## Proactive Advising
+
+Proactive advising, formerly called *intrusive* *advising,* emerged as early as the mid-1970s as a methodology for providing information and interventions to students before they request or realize they need it @drake_proactive_2013. @earl_intrusive_1988 [p. 28] defined a proactive academic advising model as "a deliberately structured student intervention at the first indication of academic difficulty to motivate a student to seek help. By this definition, intrusive advising utilizes the systematic skills of prescriptive advising while helping to solve the major problem of developmental advising, which is a *student's reluctance to self-refer*." Further, Glennen (1975) suggests proactive advising is a "disposition to thrust oneself into the affairs of others or be unduly curious about another's concern" [as cited in @drake_proactive_2013, p. 139]. The very nature and history of proactive advising is that a concerned individual reaches out to students who may be at risk or need important information when that student may not be aware of their needs or is reluctant to self-report.
+
+This approach to academic advising connects to students who may lack self-regulation, given their lack of help-seeking behaviors. In this approach, appropriately concerned individuals at the institution do not wait for students to come forward with their academic difficulties; rather, those students are approached head-on. It's important to note that proactive advising does not equate to hand-holding or parenting but rather is designed to connect to struggling students to help them build their self-regulation skills in help-seeking, time management, and study strategies and to get connected to appropriate campus resources where they can continue to build these skills @drake_proactive_2013. Proactive advising has traditionally been applied in the context of institutional academic advising. In this model, the learner is connected to their academic advisor for multiple semesters, allowing them to build trusting and consistent relationships with a concerned member of the university success team. Advisors in this context assist students with concerns related to their academics and personal lives [@drake_academic_2013; @drake_proactive_2013].
+
+@drake_proactive_2013 offers suggestions for creating successful proactive advising systems. First and foremost, advisors should develop a "solid and comprehensive understanding of the institutional resources available to the students as well as know those staffing these services" (p.145). Advisors should make themselves available using multiple modalities (email, chat, in-person, virtually) to meet students where they are. Advisors should insist on personal contact (relationship building), ensure students understand they are responsible for actively participating in problem-solving and decision-making, and help students identify and understand how to remediate resolvable causes of poor academic performance. @drake_proactive_2013 suggests that proactive advising begins with inquiry; the advisor should attempt to gain as much information about the student as possible and any potential issues they may face before meeting with the student or as early in their meeting. This allows the advisor to stay on track and have pre-defined action plans for the student. In the context of online learning and this research study, the pre-planning stage relies heavily on data from the learning management system about the student's performance and course engagement.
+
+## Learning Analytics
+
+Learning analytics is the "measurement, collection, analysis, and reporting of data about learners and their contexts, for understanding and optimizing learning and the environments in which it occurs" [@gasevic_lets_2015; Gray & Berner, 2022]. While not specific to online learning, learning analytics is especially useful in this context, given the vast amounts of data students generate in the learning management system (LMS). Predicting student success and providing tailored student feedback are two of the most frequently cited tasks associated with learning analytics @dawson_current_2014. Early development of learning analytics occurred through the 'Course Signals' platform developed by Purdue University in 2011. Course Signals used data from the LMS and student information system (SIS) to build models predicting student success and presented the results using 'red light' indicators of red, yellow, and green to students and faculty about a student's course progress @gasevic_lets_2015. Early results indicated that Course Signals showed high predictive accuracy and significant benefits in retaining students who enrolled in courses using the Course Signals algorithm. Given the success of Course Signals, it's vitally important to recognize that predictive models do not influence course success rates without being combined with "effective intervention strategies aimed at helping at-risk students succeed [@jayaprakash_early_2014, p. 8].
+
+@you_identifying_2016 suggest that by utilizing data from learning management systems, instructors and other concerned individuals have the ability to measure aspects of a student's self-regulation and provide customized feedback to learners who need to improve their self-regulation strategies and skills for academic success. Utilizing LMS data allows instructors to inquire and discover meaningful patterns that may lead to identifying at-risk students and allow them to adjust instructional strategies or refer students to support services [@dietz-uhler_using_2013; @you_identifying_2016]. Learning analytics can be used in both descriptive and prescriptive manners. Data from the LMS can describe what has occurred with a learner, such as participation, or lack thereof, in discussions, grades on assessments, and login trends. Reviewing this descriptive data allows instructors or other concerned staff to conduct outreach and *prescribe* improvement interventions. Given the proper training, the data from the LMS may be able to prescribe interventions automatically [@dietz-uhler_using_2013; @foung_making_2019].
+
+It has long been known in higher education research that timely and effective feedback is crucial for error correction and learner improvement @winstone_toward_2023. This research shows that while errors occur in almost every learning context, errors and error correction can be beneficial to learners and can promote "retention of knowledge, higher-level learning, and self-regulation" [@zhang_integrated_2023, p. 2]. @foung_making_2019 studied data-generated and tool-based recommendations. They found that automated feedback that contains course-specific online resources and online activities was most prevalent among automated recommendations. @foung_making_2019 noted that general recommendations, such as a recommendation for students to spend more time on course assessment, were likely to be acted on and improved academic outcomes.
+
+## Nudges
+
+Emerging from behavioral economics, nudge theory involves creating interventions ("nudges") that are aimed at "altering people's behaviors in a predictable way without forbidding any options or significantly changing their economic incentives" [@thaler_nudge_2009; as cited in @damgaard_nudging_2018, p. 313]. Nudge theory recognizes that people do not always act in ways that serve their best interest or help them achieve their goals, wants, or desires. Substantial research in public health, economics, marketing, and education suggests that individual decision-making could be improved using nudge interventions @damgaard_nudging_2018. @brown_creation_2023 [p. 258] states that "the power of nudges lies in their potential to modify human behavior without coercion: by appealing to individual psychology, effective nudges increase the likelihood of people making choices that reflect their underlying interests, while still respecting their freedom to choose."
+
+In the context of health, nudges may be used to help people achieve their health goals, such as weight loss or lowering blood pressure. While a person may have a stated goal to reduce their systolic blood pressure by ten points, they may not always act in their best interest and instead choose to indulge in salty foods. Nudges may be deployed to remind that person of their goals and healthy eating habits and show their progress. Similarly, in education, it is assumed that if a student registers for a course, they have a goal of passing that course, which leads to bigger goals of obtaining a credential (degree, certificate, or certification). Students do not always take the necessary steps to achieve their goals, and instructors or support staff can use nudges to help them take certain actions @brown_creation_2023.
+
+In their meta-analysis, @damgaard_nudging_2018 found that nudges in education may be used to increase learner engagement, increase learner self-regulation (deadlines, goal setting), provide timely reminders, direct students to help resources and serve as a psychological intervention to target students' mindsets and self-efficacy. They also noted that using targeted rather than universal nudges may be desirable. Tailoring nudges to a student's particular need or context proves more beneficial than general nudges for all learners. Learning analytics and educational data mining have been used to automate tailored nudges for students by tracking their progress in the learning management system. Using that data, students receive "intentional, timely, and strategic communication" about deadlines and help resources [@lawrence_does_2021, p. 29].
+
+@lawrence_does_2021 used learner data to gauge the impact of a nudge intervention on online engagement in a statistics course. They measured student engagement in course resources *before* and *after* a nudge was given. They noted that well-timed and well-crafted nudges written for a specific student audience can increase engagement with course materials, as evidenced by their study. Similarly, @guo_examining_2024 measured how nudges affect student enrollment and participation in online courses in general and found that, compared to a control group, nudge strategies increase student participation (engagement) in online courses in general.
+
+While there is a promise in utilizing nudges to increase student engagement and overall success, @brown_creation_2023 provide caution and guidance on creating a nudge strategy. Creating a nudge strategy can be a form of art, requiring technical skills, knowledge of motivational psychology and adequate communication. Creating nudges from data requires a well-developed data architecture with appropriate engineering of data from the learning management system and automation for deploying nudges in a timely and targeted manner. In developing a nudge strategy, it's important to determine *what* to nudge, *who* to nudge, and *how* to nudge (nudge modality: email/text/personal contact). Additionally, those developing nudge strategies may consider A/B testing their nudges to see if specific communication or modalities are more effective in reaching and motivating students. A/B testing, which is common in marketing and web design, is to determine which of two potential strategies or interventions yields the best results in terms of calling consumers to action. While A/B testing usually involves randomization, it rarely meets the high standards of a randomized control trial since there is no control group, but rather, two experiment groups @bruce_practical_2020. For instance, marketing researchers might create two separate email or texting campaigns to promote their product, measuring success by analyzing which campaign generates more sales. Similarly, in academic nudging, A/B testing shifts the focus from merely determining whether nudges enhance student success to identifying which specific messaging strategy proves more effective.
+
+# Statement of Purpose & Research Questions
+
+This research proposal is grounded in the theories and principles of online learner engagement, self-regulated learning, proactive advising, learning analytics, and nudge theory. It seeks to improve student engagement and success in online learning environments. Specifically, this study evaluates the effectiveness of student support strategies: (Q1) course-specific general and targeted nudges and (Q2) targeted outreach conducted by dedicated course advisors. By building upon existing support systems (described later in this proposal), this research aims to enhance the support and outreach offered to online learners within the context of USG eCampus (described later in this proposal). This research proposal addresses the following research questions:
+
+-   **Q1:** Do course-specific general and targeted nudges influence course engagement and student success?
+
+-   **Q2:** Does the addition of targeted outreach by dedicated course advisors further impact course engagement and student success compared to using nudges alone?
+
+# Context
+
+The context for this research is within the University System of Georgia eCampus (USG eCampus). USG eCampus is a collaborative program facilitated by the University System of Georgia with the following purpose: "As a service unit of the University System of Georgia, we facilitate the development and delivery of high-quality, affordable, and accessible online learning experiences while supporting strategic system-level initiatives to enrich students' lives and enhance the economic, cultural, and social interests of Georgians." (USG eCampus, n.d.). USG eCampus is not an accredited institution of higher learning but offers collaborative courses on behalf of accredited public institutions in the State of Georgia. One of the subsets of eCampus, eCore, offers lower-level courses in the USG core curriculum in a collaborative environment to 21 public institutions. All classes are offered through asynchronous online delivery.
+
+Courses in eCore are designed by instructional designers and subject matter experts, all of whom are teaching faculty at one of the public institutions represented in the collaborative program. Each eCore course uses a course template with a standardized curriculum, supplemental materials, and assessments. Course textbooks are always an open educational resource. Faculty employed at any University System of Georgia institution may apply to teach an eCore course and are typically paid in addition to their usual compensation through their home institution. eCore offers courses on 8-and 16-week schedules.
+
+The present study will focus on a non-STEM based mathematics course, MATH 1001: Quantitative Reasoning. According to the official course description, "this course emphasizes quantitative reasoning skills needed for informed citizens to understand the world around them. Topics include logic, basic probability, data analysis and modeling from data." (Course Syllabus: MATH 1001 Quantitative Reasoning, 2024). In the University System of Georgia this course satisfies the general mathematics requirement for non-STEM liberal arts majors. While this course is not remedial, it was chosen for this study based on research regarding the importance of successfully completing gateway mathematics courses early in a learner's college pathway [Bahr, 2012; @zeidenberg_not_2012]. Enrollment statistics from Fall 2024 provide insight for what enrollment may look like for the target research term, Fall 2025.
+
+```{r}
+#| label: tbl-enrollment
+#| echo: false
+#| warning: false
+
+math1001_enrollment <- tibble(
+  category = c(
+    "Course",
+    "Race",
+    "Race",
+    "Sex",
+    "Sex",
+    "Institution Type",
+    "Institution Type"
+  ),
+  subcategory = c(
+    "MATH 1001",
+    "Non-white or multiracial",
+    "White",
+    "Male",
+    "Female",
+    "2-Year College",
+    "4-Year College/University"
+  ),
+  count = c(1785, 767, 1018, 547, 1238, 863, 922),
+  percent = c(1.00, 0.429, 0.571, 0.3215, 0.6785, 0.4834, 0.5166),
+  avg_prior_performance = c(2.65, 2.35, 2.94, 2.43, 2.87, 2.28, 3.02)
+)
+
+# Create the gt table
+math1001_enrollment |>
+  group_by(category) |> 
+  gt() |>
+  tab_header(
+    title = md("**Table 1: Distribution of MATH 1001 - Quantitative Reasoning Enrollment for Fall 2024**")
+  ) |>
+  cols_label(
+    subcategory = "",
+    count = "Count",
+    percent = "Percent",
+    avg_prior_performance = "Avg. Prior Academic Performance"
+  ) |>
+  cols_align(columns = c(count,percent,avg_prior_performance), 
+             align = 'center') |> 
+  fmt_number(
+    columns = count,
+    decimals = 0,
+    use_seps = TRUE
+  ) |>
+  fmt_percent(
+    columns = percent,
+    decimals = 2
+  ) |>
+  fmt_number(
+    columns = avg_prior_performance,
+    decimals = 2
+  ) |>
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_row_groups()
+  ) |>
+  tab_options(
+    table.font.size = table_font_size,
+    heading.align = "left",
+    row_group.font.weight = "bold",
+    table.width = pct(100)
+  ) 
+```
+
+**Course Structure**
+
+eCore courses are structured using a learner-focused design where effective use of the learning management system is deployed by ensuring all assignments, quizzes, and discussions are built with clear starting and due dates. Course syllabi, course calendars, and corresponding dates in the LMS are synchronized to ensure students have an accurate and up-to-date source for when assignments are due. This structure allows for LMS-specific notifications that assignments are due and nudges in this research study to occur timely. Grades are synchronized to a standard LMS grade book, and faculty teaching eCore courses agree to grade and provide feedback to students within 72 hours of assignment due dates.
+
+In addition to the standard LMS structure, the math course in this study has the added advantage of using the Knewton Alta adaptive learning platform. Adaptive learning systems provide tailored instructional material to learners by adapting to the unique learning style of the student @abascal_design_2015. In the context of this study, adaptive learning technology can detect when a student is struggling with a specific topic and provide more practice and instructional support to meet the learner's needs. With this increased support, data is generated regarding student progress separate from the LMS, and students and particular areas where those students may be flagged as "struggling" are identified.
+
+**Support Systems**
+
+Within this context, several student support systems are in place to help identify and conduct outreach to "at-risk" students, namely the Student Success Team ("SST"). The SST is a group of about 70 full-time staff members in eCampus, all with other duties, with SST accounting for 5-10% of our total job duties. The SST is responsible for emails, texts, and phone calls to students when they meet specific criteria. These criteria include not logging into their course on days 3 & 5 of the semester, not registering for or completing a required proctored examination, not completing a required major project, or being identified as "at-risk" by their instructor using our faculty-initiated early alert system. In addition to outreach support services, eCore provides students with opt-in services such as dedicated tutors, a dedicated online writing center, and librarians. These services are offered in addition to services that may be provided at the student's home institution.
+
+# Research Design and Method
+
+To address the research questions, this study proposes to utilize a randomized control trial (RCT) design, including a control group and two intervention (experiment) groups. This design ensures a robust evaluation of the causal effects of the proposed strategies on course engagement and student success. An RCT design's main goal is to eliminate or control for confounders and bias through research design rather than statistical analysis @bueno_de_mesquita_thinking_2021. Students will be randomly assigned to one of the three groups within each course section. This random sampling ensures that each student has an equal chance of placement in any group, thereby reducing the likelihood of selection bias. Conducting the random sampling at the course-section level also helps control a major confounding variable: differences in instruction provided by various faculty members.
+
+Participants will be assigned as follows:
+
+-   **Control:** Students will not receive additional interventions beyond standard support mechanisms described previously and available to all eCore students.
+
+-   **Nudge:** Students will receive course-specific general and targeted nudges informed by data extracted from the learning management system. Nudges will be delivered to students via their campus email address and text messages. The results from this group will facilitate answering research question 1: "Do course-specific general and targeted nudges influence course engagement and student success?"
+
+-   **Nudge + Course Advisor (Nudge+CA):** Students in this group will receive the same nudges in the "nudge" intervention group. However, these students will also receive personalized phone calls, emails, and text messages from a dedicated course advisor when students do not respond to the automated nudges. The results from this group will facilitate answering research question 2: "Does the addition of targeted outreach by dedicated course advisors further impact course engagement and student success compared to using nudges alone?"
+
+This design follows a logic progression of additional support systems that aim to influence student engagement and success. The control group receives no intervention while the Nudge group receives a low-intensity, scalable, and cost-effective intervention. The Nudge+CA group is a high-intensity, costly, and resource-intensive intervention. Understanding the differences in the main effects between these groups will help eCore administrators understand how to effectively utilize resources to support student success.
+
+**Interventions**
+
+Nudges and outreach from course advisors will be implemented and tracked using the Salesforce Customer Relationship Management (CRM) software. Email and text nudges will originate from the CRM and can be tracked to individual students within the CRM. Data extracted from the LMS will be loaded into the CRM just before triggering nudges to ensure the data is accurate. A list of outreach methods and criteria for outreach is listed in Table 2. All students, including the control group, will continue to receive the standard and currently deployed Student Success Team (SST) outreach as indicated in Table 2.
+
+```{r}
+#| label: tbl-nudge-outreach
+#| echo: false
+#| warning: false
+
+nudge_outreach <- tibble(
+  type = c(
+    "Standard Outreach",
+    "Nudges",
+    "Nudges",
+    "Nudges",
+    "Nudges",
+    "Nudges",
+    "Nudges",
+    "Outreach",
+    "Outreach",
+    "Outreach"
+  ),
+  outreach = c(
+    "Standard eCore Student Success Team (SST) model.",
+    "Weekly Digest Nudges",
+    "Notices of help resources Nudge",
+    "No course logins in x days Nudge",
+    "Upcoming Assignment or Quiz Due Nudge",
+    "Missing Assignment or Quiz Nudge",
+    "Struggling Identified Nudge",
+    "No Course Logins in x Days Outreach",
+    "Missing Assignment or Quiz Outreach",
+    "Struggling Identified Outreach"
+  ),
+  details = c(
+    "Standard outreach by the established Student Success Team (SST) model which includes outreach to students who do not log in to their course on days 3 & 5 of the semester, do not register for or complete a required proctored exam/major project, or are identified as being \"at-risk\" by their instructor using out faculty-initiated early alert system.",
+    "Weekly digest emails will include course-specific information about the week's learning objectives, learning activities, and assessments to be completed this week. Additionally, any major assignments (proctored exams/research reports) coming due in the next three weeks will be listed with their appropriate due dates. Lastly, brief information on help resources will be presented.",
+    "Emails triggered to students reminding them of help/support services offered by eCore.",
+    "Emails and text messages to students who have not accessed their course in the LMS in 8, 14, and 21 days.",
+    "Emails and text messages to students who have not turned in a required assignment or completed a required quiz 3 days before the assignment or quiz is due.",
+    "Targeted to students who did not complete a required assignment or required test/quiz by the deadline. An email and text message. The email will include the instructor's preferred contact information and an extract of the course late/make-up policy as outlined in the course syllabus. Individual instructors determine their policies for accepting late work, but those policies must be in the course syllabus. Using the syllabus API, that data is extracted and linked to the course syllabus.",
+    "Targeted to students where the adaptive learning software in math courses identified students as struggling in certain areas. Email and text messages sent to struggling students. The email and text messages will appear as if they originate from the embedded STEM tutors, with the option to schedule an appointment from a link in the email.",
+    "Outreach from a course advisor for students who have not accessed their course in the LMS in 10, 16, and 23 days (2 days after the automated nudge).",
+    "Outreach from a course advisor to students who did not complete a required assignment or quiz 3 days after the required assignment or quiz was due. Conversations will include information about the course make-up policy and study habits for future success.",
+    "Targeted to students where the adaptive learning software in math courses identified students as struggling in certain areas. Course advisors conduct outreach to students to get them connected to help resources such as tutors, peer support, or additional course support."
+  ),
+  control = c("X", "", "", "", "", "", "", "", "", ""),
+  nudge = c("X", "X", "X", "X", "X", "X", "X", "", "", ""),
+  nudge_ca = c("X", "X", "X", "X", "X", "X", "X", "X", "X", "X")
+)
+
+nudge_outreach |>
+  group_by(type) |>
+  gt() |>
+  tab_header(
+    title = md("**Table 2: Nudge & Outreach Methods**")
+  ) |>
+  cols_label(
+    outreach = "Outreach",
+    details = "Details",
+    control = "Control",
+    nudge = "Nudge",
+    nudge_ca = "Nudge+CA"
+  ) |>
+  cols_align(
+    columns = c(outreach, details),
+    align = "left"
+  ) |>
+  cols_align(
+    columns = c(control, nudge, nudge_ca),
+    align = "center"
+  ) |>
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_row_groups()
+  ) |>
+  tab_options(
+    table.font.size = table_font_size,
+    heading.align = "left",
+    row_group.font.weight = "bold",
+    table.width = pct(100)
+  )
+```
+
+For students in the Nudges+CA intervention group, course advisors will respond to student needs utilizing the proactive advising approach described by @drake_proactive_2013 and will work with students to help them better understand the course and assignment requirements, connect to help resources, and confront academic difficulties head-on. Course advisors will be equipped with access to a live student success dashboard to see a holistic view of the student's progress in the course. The dashboard (example in Appendix II) provides near-real-time information on the student's course grade, missing assignments/quizzes, participation in course discussion boards, and login trends. Student metrics are compared to their peers in the same course section, providing course advisors insight into how other students perform. While the student success dashboard is mainly descriptive, course advisors will be trained to interpret, analyze, and recommend actions to students @ramaswami_effectiveness_2023. Table 3 provides a detailed list of the data sources utilized in the interventions and subsequent analysis.
+
+```{r}
+#| label: tbl-data-sources
+#| echo: false
+#| warning: false
+
+data_sources <- tibble(
+  data_source = c(
+    "Learning Management System (LMS)",
+    "Simple Syllabus",
+    "Knewton Alta",
+    "Salesforce CRM"
+  ),
+  data_description = c(
+    "Data extracted from the LMS includes course login information, assignment and quiz due dates / submission status, course grades, and information about discussion participation rates.",
+    "Data extracted from the course syllabus via the Simple Syllabus API provides a live view of an instructor's syllabus, including information about the instructor's policy on submitting late or missing assignments.",
+    "Data from Knewton Alta includes assignment/quiz due dates and submission status for items assigned in Knewton. Additionally, when students do complete an assignment, the Knewton algorithm could detect if students struggled with the assignment and indicators of struggling exist as well.",
+    "Salesforce data includes information about cases already completed and any faculty submitted cases."
+  )
+)
+
+data_sources |>
+  gt() |>
+  tab_header(
+    title = md("**Table 3: Data Sources**")
+  ) |>
+  cols_label(
+    data_source = "Data Source",
+    data_description = "Data Description"
+  ) |>
+  cols_align(
+    columns = everything(),
+    align = "left"
+  ) |>
+  tab_options(
+    table.font.size = table_font_size,
+    heading.align = "left",
+    table.width = pct(100)
+  )
+```
+
+# Course Advisors
+
+For this research project, a new model of hiring and utilizing course advisors model is essential to the study methodology. Course advisors are trained professional staff with a demonstrated history of experience in academic advising, academic coaching, counseling, or serving as a credentialed instructor for the discipline they will be course advising. According to SACSCOC guidelines, a credentialed instructor is someone with a minimum of a master's degree and a minimum of 18 credit hours of graduate coursework in the subject discipline area. For this research study, all course advisors will possess a combination of professional training and a minimum of a bachelor's degree in the subject discipline (mathematics or a closely related discipline).
+
+Course advisors are not intended to replace course instructors of record ("course instructor") but rather to help course instructors identify and provide resources for students who may be at risk in their courses. Course advisors may be thought of similarly as graduate teaching assistants ('GTA'), except that under no circumstances will a course advisor engage in the assessment of student work. Course advisors are trained specifically in proactive advising and helping students develop self-regulated skills to succeed in their current and future courses.
+
+# Data Collection & Analysis
+
+Given our research questions, hypothesis generation helps frame how our data will be collected and analyzed. Data collection will consist of extracting data compiled in the learning management system as a part of the normal educational process for course completion. Determining the appropriate variables to extract from the LMS for analysis will be guided by our research hypotheses:
+
+-   **Course Engagement**
+
+    -   Null Hypothesis (H~0~): There is no significant difference in the levels of student course engagement between the specific groups (Control vs. Nudges, Control vs. Nudges+CA, Nudges vs Nudges+CA).
+
+    -   Alternative Hypothesis (H~1~): There is a significant difference in levels of student course engagement between the specific groups (Control vs. Nudges, Control vs. Nudges+CA, Nudges vs Nudges+CA).
+
+-   **Student Success**
+
+    -   Null Hypothesis (H~0~): There is no significant difference in the probability of a student passing their course (final grade of A, B, or C) between the specific groups (Control vs. Nudges, Control vs. Nudges+CA, Nudges vs Nudges+CA).
+
+    -   Alternative Hypothesis (H~1~): There is a significant difference in the probability that a student will pass their course (final grade of A, B, or C) between the specific groups (Control vs. Nudges, Control vs. Nudges+CA, Nudges vs Nudges+CA).
+
+*Course Engagement*
+
+While Martin and Borup (2022) describe three different types of course engagement (cognitive, affective, and behavioral), this study will focus on changes in *behavioral* course engagement since this can readily be measured through data in the learning management system. To measure course engagement, ordinary least squares (OLS) regression will be used to determine if there are differences in the average number of late submissions or missing assignments or quizzes between the control, Nudge, and Nudge+CA groups. Given the likely differences in distribution of demographics and prior academic performance, these variables will be added to the model to control for their variations. Prior academic performance is measured by using the student's high school GPA (if a college freshman) or the overall college GPA (if previously matriculated). It has long been known that prior academic performance is one of the strongest predictors of future students' success. It is important to account for that variable in this research. The results of the OLS regression will indicate if there are differences in the number of late or missing assignments/quizzes by control and intervention groups when controlling for prior academic performance and demographics. The following model will measure the differences between the three groups. The model will be calculated for each dependent variable (DV).
+
+*DV = α + β~1~ ​(group~Nudge~​) + β~2 ​~(group\~Nudge + Course Advisor\~​) + β~3 ​~(PriorPerformance) + β~4~ (race~white~) + β~5~ ​(sex~male~​) + β~6~ ​(InstitutionType\~4-Year College/University\~​) + ϵ*
+
+Where:
+
+-   DV = dependent variable, either Late Assignment/Quizzes or Missing Assignments/Quizzes
+-   α: The model intercept
+-   β~1~ / β~2~ Dummy-coded variables for student groups (Nudge and Nudge+CA, respectively)
+-   β~3~​: Student's prior academic performance (high school GPA or college GPA)
+-   β~4~: Student-reported race (white vs. non-white)
+-   β~5~ Student-reported sex (male vs. female)
+-   β6​: Institution type (2-year vs. 4-year college/university)
+-   ϵ: The residual error term
+
+It will be important to evaluate the stated hypothesis using this model to evaluate differences in submission behaviors between the three groups. For this study, an increase in on-time and late submissions and a decrease in missing submissions will likely indicate intervention success, rejecting the null hypothesis. While the nudges and outreach efforts aim to prompt students to complete assignments before due dates, accepting late submissions with a minor score reduction still substantially benefits students' overall course performance compared to receiving zero credit.
+
+*Student Success*
+
+Student success in this course is defined as achieving a final course grade of A, B, or C. A binary logistic regression model will be used to determine whether students in either of the intervention groups have higher odds of success than those in the control group. This model will estimate the likelihood of student success while controlling for prior academic performance and demographic factors. After adjusting for these covariates, the results will indicate whether students in the Nudge or Nudge+CA groups have significantly different odds of achieving success compared to the control group. The logistic regression model used to analyze student success is as follows:
+
+*logit(P(Success)) = α + β~1~ ​(group~Nudge~​) + β~2 ​~(group\~Nudge + Course Advisor\~​) + β~3 ​~(PriorPerformance) + β~4~ (race~white~) + β~5~ ​(sex~male~​) + β~6~ ​(InstitutionType\~4-Year College/University\~​) + ϵ*
+
+Where:
+
+-   Success: Dependent variable (1 = Success \[final grade of A, B, or C\], 0 = Not successful \[final grade of D or F\])
+-   α: The model intercept
+-   β~1~ / β~2~ Dummy-coded variables for student groups (Nudge and Nudge+CA, respectively)
+-   β~3~​: Student's prior academic performance (high school GPA or college GPA)
+-   β~4~: Student-reported race (white vs. non-white)
+-   β~5~ Student-reported sex (male vs. female)
+-   β6​: Institution type (2-year vs. 4-year college/university)
+-   ϵ: The residual error term
+
+This model evaluates the effect of each intervention group relative to the control group while adjusting for differences in prior academic performance. The analysis will determine whether significant differences in student success exist among the three groups after accounting for prior academic achievement.
+
+# Ethical Considerations
+
+Protecting our students ("human subjects") is of utmost priority to the research team. The research team believes this research project will qualify for a limited IRB review to classify the study in an exempt category in compliance with 45 CFR 46.104(d)(1):
+
+> "Research involving normal educational practices that are not likely to adversely impact students' opportunity to learn required educational content or the assessment of educators who provide interaction such as:
+
+1.  Most research on regular and special education instructional strategies; or
+
+2.  Research on the effectiveness of or the comparison among instructional techniques, curricula, or classroom management.
+
+The research team believes that our interventions would classify as a "comparison of instructional techniques" and that participants are not likely to be adversely impacted.
+
+While the research team believes this study will qualify for exempt status, it is important to note the following:
+
+1.  All data collected from the learning management system and Knewton is protected using guidelines established by the Family Educational Rights and Privacy Act (FERPA) of 1974. All data are securely stored on servers maintained or trusted by the University of West Georgia (the host institution for USG eCampus). All research team members have received adequate training in FERPA, and the lead course advisor will ensure compliance.
+
+2.  Students have the option of opting out of the research in the following ways:
+
+    a.  Use an opt-out link in all the "nudge" emails or reply "STOP" to any text message notifications.
+
+    b.  Replying to an email asking to be removed from the mailing list
+
+    c.  Informing the course advisor over the phone that they no longer wish to be called.
+
+> Once students choose to "opt-out" of the nudges via phone, email, or text, their data will be excluded from the overall research study.
+
+# Budget and Staffing
+
+The staffing for this research proposal is listed below. Software, such as Salesforce, Tableau, and Posit Workbench (R), is already in place, and no additional purchases are required for this research proposal. Course advisors will need to be hired, trained, and monitored.
+
+```{r}
+#| label: tbl-budget-staffing
+#| echo: false
+#| warning: false
+
+budget_staffing <- tibble(
+  staff = c(
+    "Research Coordinator and PI",
+    "Data Scientist / Engineer",
+    "Salesforce Admin",
+    "Lead Course Advisor",
+    "Course Advisors (x8)"
+  ),
+  duties = c(
+    "Manages all aspects of the research, including overseeing the course advisors, monitoring outreach, approving messaging, ensuring ethical compliance, etc.",
+    "Maintains data pipelines from various data sources, designs dashboards, and completes statistical analysis.",
+    "Design and maintain the email and text messaging pipelines in Salesforce, as well as general Salesforce issues for research staff.",
+    "Monitors course advisors, provides guidance and oversight to interactions with students.",
+    "Conducts, outreach, answers student inquiries, and monitors student progress."
+  ),
+  budget = c(
+    "Included in full-time salary.",
+    "Included in full-time salary.",
+    "Included in full-time salary.",
+    "$5,500/semester",
+    "$30,000/Semester ($3,750 per course advisor)"
+  )
+)
+
+budget_staffing |>
+  gt() |>
+  tab_header(
+    title = md("**Table 4: Budget and Staffing**")
+  ) |>
+  cols_label(
+    staff = "Staff",
+    duties = "Duties",
+    budget = "Budget"
+  ) |>
+  cols_align(
+    columns = everything(),
+    align = "left"
+  ) |>
+  tab_options(
+    table.font.size = table_font_size,
+    heading.align = "left",
+    table.width = pct(100)
+  )
+```
+
+# Summary
+
+Prior research indicates that the use of well-timed and course-specific nudges will positively impact student engagement and overall course success. It is expected that the results of this research will indicate that students in the Nudge and Nudge+CA groups will exhibit higher levels of course engagement and, subsequently, higher rates of course success. While success with nudges, in general, is expected, we hope to gain further insight into how powerful these nudges are and at what rates course engagement and student success differ from the control group. What is unclear is whether the addition of outreach from the course advisor promotes higher levels of course engagement and success than automated nudges and the student's outreach to the course advisor alone (Nudge+CA vs Nudge). Given the costs of hiring and training course advisors, answering this second question is important for understanding where spending funds for student success initiatives is most valuable. The results of this research study will be used to further the student success initiatives of USG eCampus and will help us inform our student outreach practices. Further research may be conducted on the verbiage used in the nudges, and A/B testing may be conducted to see if particular groups of students respond differently to different types of messaging campaigns.
+
+# Appendix I: Weekly Digest Email Example
+
+\[Note: The original document included an image of a weekly digest email example. This would need to be referenced or recreated separately as Quarto can include images with appropriate file paths.\]
+
+# Appendix II: eCampus Student Course Analytics Dashboard Example
+
+\[Note: The original document included an image of the course analytics dashboard. This would need to be referenced or recreated separately as Quarto can include images with appropriate file paths.\]
+
+# References
+
+::: {#refs}
+:::
